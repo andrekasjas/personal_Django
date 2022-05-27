@@ -1,0 +1,43 @@
+{% extends 'Home/base.html' %}
+{% load static %}
+{% block content %}
+<!-- Heading -->
+<section class="page-section clearfix">
+  <div class="container">
+    <div class="intro">
+      <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" style="width: auto; height: auto;" src="{% static 'Personal/img/yo_alta.png' %} " alt="">
+      <div class="intro-text left-0 text-center bg-faded p-5 rounded" >
+        <h2 class="section-heading mb-4" >
+          <span class="section-heading-lower">ingeniero de sistemas</span>
+          <span class="section-heading-upper">universidad de pamplona</span>
+        </h2>
+        <p class="mb-3">
+          Cursando 9 semestre
+        </p>
+      </div>
+      <a href="{% static 'Personal/docs/ConstanciaMatricula.pdf' %}" download="constancia">
+        <div class="intro-text left-0 text-center bg-faded p-5 rounded" style="margin-top: 20rem;">
+          <h2 class="section-heading mb-4" >
+            <span class="section-heading-lower">programa mision tic 2022</span>
+            <span class="section-heading-upper">universidad de caldas</span>
+          </h2>
+          <p class="mb-3">
+            Cursando diplomado en habilidades en programación
+          </p>
+        </div>
+      </a>
+      <div class="intro-text left-0 text-center bg-faded p-5 rounded" style="margin-top: 40rem;">
+        <h2 class="section-heading mb-4" >
+          <span class="section-heading-upper">conectemonos</span>
+        </h2>
+        <ul class="social-network social-circle">
+          <li style="color: white; list-style: none;"><a style="background: #007bb7; " target="_blank" rel="noreferrer noopener" href="https://www.linkedin.com/in/andr%C3%A9s-fernando-mogollon-385253234"  title="Linkedin"><i class="fa fa-linkedin" style="color: #fff;"></i></a></li>
+            <li style="color: white; list-style: none;"><a style="background: #4078c0; " target="_blank" rel="noreferrer noopener" href="https://github.com/andrekasjas" class="icoGithub" title="Github"><i class="fa fa-github" style="color: #fff;"></i></a></li>
+          <li style="color: white; list-style: none;"><a style="background: #25D366; " target="_blank" rel="noreferrer noopener" href="https://api.whatsapp.com/send?phone=573228169332" class="icoWhatsapp" title="Whatsapp"><i class="fa fa-whatsapp" style="color: #fff;"></i></a></li>
+            <li style="color: white; list-style: none;"><a style="background: #00B2FF; " target="_blank" rel="noreferrer noopener" href="https://m.me/andres.mogollon.714" class="icoMessenger" title="Messenger"><i class="fa fa-facebook" style="color: #fff;"></i></a></li>
+        </ul>	
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock  %}

@@ -1,0 +1,29 @@
+{% extends 'Home/base.html' %}
+{% load static %}
+{% block content %}
+    {% include 'Proyectos/seccion.html' %}
+    <div class="container">
+        <div class="row" style="margin-bottom:150px; ">
+            {% for proyecto in proyects %}
+            <div class="col-auto" style="margin-top: 2rem;">
+                <div class="card" style="width: 18rem; background-color: rgb(1, 1, 39);color: cornsilk;">
+                    <img src="{{proyecto.imagen.url}}" alt="{{proyecto.nombre}}" title="Imagen de referencia de la web" style="width: auto; height: 10rem; margin: 0%;">
+                    <div class="card-body" style="text-align: center;">
+                        <h5 class="card-title">
+                            {{proyecto.nombre|upper}}
+                            <a href="{% url 'categoria' proyecto.categoria_id %}" class="link" style="font-size: small;">({{proyecto.categoria}})</a>
+                        </h5>
+                        {% for tecnologia in proyecto.tecnologia.all %}
+                            <a href="{% url 'tecnologia' tecnologia.id %}" class="link" >{{tecnologia.nombre}}</a>
+                        {% endfor %}
+                    </div>
+                    <div class="text-right">
+                        <a href="{{proyecto.host}}" target="_blank" rel="noreferrer noopener" class="link" style="margin-right: 1rem; font-size: large;"><i class="fa fa-globe" style="color: #fff; margin-right: 3px;"></i>Host</a>
+                        <a href="{{proyecto.git}}" target="_blank" rel="noreferrer noopener" class="link" style="margin-right: 1rem; font-size: large;"><i class="fa fa-github" style="color: #ddd; margin-right: 3px;"></i>Git hub</a>
+                    </div>
+                </div></a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock  %}
