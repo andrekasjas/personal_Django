@@ -1,0 +1,38 @@
+{% extends 'Home/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+        <div class="col-3">
+            <h4 class="h4" style="color: cornsilk; ">Escribeme a mis redes</h4>
+            <ul class=" social-circle">
+                <li style="color: cornsilk; list-style: none;"><a style="background: #007bb7; " target="_blank" rel="noreferrer noopener" href="https://www.linkedin.com/in/andr%C3%A9s-fernando-mogollon-385253234"  title="Linkedin"><i class="fa fa-linkedin" style="color: #fff;"></i></a>Linkedin</li>
+                <li style="color: cornsilk; list-style: none;"><a style="background: #25D366; " target="_blank" rel="noreferrer noopener" href="https://api.whatsapp.com/send?phone=573228169332" class="icoWhatsapp" title="Whatsapp"><i class="fa fa-whatsapp" style="color: #fff;"></i></a>Whatsapp</li>
+                <li style="color: cornsilk; list-style: none;"><a style="background: #00B2FF; " target="_blank" rel="noreferrer noopener" href="https://m.me/andres.mogollon.714" class="icoMessenger" title="Messenger"><i class="fa fa-facebook" style="color: #fff;"></i></a>Facebook</li>
+            </ul>
+        </div>
+        <div class="col-6 text-center">
+            <h4 class="h4" style="color: cornsilk;">Enviame un correo</h4>
+            {% if 'valido' in request.GET %}
+                <div class="alert alert-success">Informacion enviada correctamente</div>
+            {% endif %}
+            {% if 'novalido' in request.GET %}
+                <div class="alert alert-danger">A ocurrido un problema intenta de nuevo</div>
+            {% endif %}
+            <form action="" method="POST" style="text-align: center; margin-top: 10px;">{% csrf_token %}
+            <table style="color: cornsilk; position: relative; margin: 40px auto;" >
+                {{formulario.as_table}}
+            </table>
+            <button type="submit" class="btn btn-outline-info btn-block" style=" border-color: #11c9cf !important;">Enviar</button>
+        </div>
+        <div class="col-3">
+            <h4 class="h4" style="color: cornsilk; text-align: center;">Codigo QR chat whatsapp</h4>
+            <div class="card" style="width: 13rem; margin: 0 10%;">
+                <img class="card-img-top" src="{% static 'Personal/img/qr_whatsapp.png' %}" alt="Card image cap">
+            </div>
+        </div>
+    </div>
+    </div>
+    
+    
+{% endblock  %}
