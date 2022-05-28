@@ -34,6 +34,9 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="mx-rigth" style="margin: 5px;">
+          <a class="btn btn-info" style="color: #010127;" href="{% static 'Personal/docs/CV_Andres_Mogollon.pdf' %}" download="constancia" role="button">Download</a>
+        </ul>
         <ul class="navbar-nav mx-auto " style="width: 200px;">
           <li class="nav-item {% if request.path == '/' %} active {% endif %} px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="{% url 'home' %}">Andres</a>
@@ -45,7 +48,7 @@
             <a class="nav-link text-uppercase text-expanded" href="{% url 'contactame' %}">Contactame</a>
           </li>
         </ul>
-        <ul class="mx-left" style="margin: 10px;">
+        <ul class="mx-left" style="margin: 5px;">
           <form class="form-inline my-2 my-lg-0" method="POST" >{% csrf_token %}
             {% if request.path|slice:':11' == '/proyectos/' %} 
               <input  class="form-control mr-sm invi" type="search" name="buscar" placeholder="Buscar..." title="Busca por tecnologia, categoria o nombre de proyecto" aria-label="Search">
