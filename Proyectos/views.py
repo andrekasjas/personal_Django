@@ -41,7 +41,7 @@ def buscar(queryset):
         Q(tecnologia__nombre__icontains = queryset) 
     ).distinct()
     if (queryset == 'todos') | (queryset == 'todo'):
-        proyects = proyectos.objects.all()
+        proyects = proyectos.objects.all().order_by('-created')
     elif not proyects:
         mensaje = queryset
     return mensaje, proyects
@@ -49,7 +49,7 @@ def buscar(queryset):
 def proyectoss(request):
     
     categoris,tecnologis = cantidad()
-    proyects = proyectos.objects.all()
+    proyects = proyectos.objects.all().order_by('-created')
     proyects = proyects
     queryset = request.POST.get("buscar")
     mensaje = False
@@ -63,7 +63,7 @@ def proyectoss(request):
 def categoria(request, categoria_id):
     categoris,tecnologis = cantidad()
     categori = categorias.objects.get(id = categoria_id)
-    proyects = proyectos.objects.filter(categoria = categoria_id)
+    proyects = proyectos.objects.filter(categoria = categoria_id).order_by('-created')
     queryset = request.POST.get("buscar")
     mensaje = False
     if queryset:
@@ -77,7 +77,7 @@ def categoria(request, categoria_id):
 def tecnologia(request, tecnologia_id):
     categoris,tecnologis = cantidad()
     tecnologi = tecnologias.objects.get(id = tecnologia_id)
-    proyects = proyectos.objects.filter(tecnologia = tecnologia_id)
+    proyects = proyectos.objects.filter(tecnologia = tecnologia_id).order_by('-created')
     queryset = request.POST.get("buscar")
     mensaje = False
     if queryset:

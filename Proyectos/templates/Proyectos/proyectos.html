@@ -7,7 +7,7 @@
             {% for proyecto in proyects %}
             <div class="col-auto" style="margin-top: 2rem;">
                 <div class="card" style="width: 18rem; background-color: rgb(1, 1, 39);color: cornsilk;">
-                    <img src="{{proyecto.imagen.url}}" alt="{{proyecto.nombre}}" title="Imagen de referencia de la web" style="width: auto; height: 10rem; margin: 0%;">
+                    <img src="{{proyecto.imagen.url}}" alt="{{proyecto.nombre}}" title="{{proyecto.descripcion}}" style="width: auto; height: 10rem; margin: 0%;">
                     <div class="card-body" style="text-align: center;">
                         <h5 class="card-title">
                             {{proyecto.nombre|upper}}
